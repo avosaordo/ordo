@@ -1,52 +1,445 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Page Title</title>
-<style>
-.drawer {
-  position: relative;
-  box-sizing: border-box;
-  width: 100%;
+ <meta http-equiv="content-type" content="text/html; charset=utf-8">
+ <meta name="author" content="AVOSA Communications">
+ <meta name="rights" content="AVOSA">
+ <meta name="description" content="Liturgical Ordo for the Apostolic Vicariate of Southern Arabia">
+ <meta name="viewport" content="width=device-width, user-scalable=yes,
+initial-scale=1.0">
+ <title>Liturgical Calendar 2017-8</title>
+
+
+<style type="text/css">
+body {background-color:white; color:black;font-family:sans;line-height:130%;}
+
+/*DROP DOWN MENU */
+#navigationbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  position:fixed;
+  top:0;
+  width:100%;
+  }
+
+li {
+  float: left;
 }
-.drawer input {
-  width: 100%;
-  height: 60px;
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+    position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  margin: 0;
-  z-index: 3;
-  cursor: pointer;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
 }
-.drawer__name {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  padding: 10px;
-  background: lightblue;
+
+.dropdown-content a {
+  color: green;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
-.drawer__content {
-  border: 1px solid black;
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  height: 0;
-  opacity: 0;
-  pointer-events: none;
-  list-style: none;
-  transition: padding 0.2s;
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+
+.show {display: block;}
+
 }
-.drawer input:checked ~ .drawer__content {
-  height: 100%;
-  opacity: 1;
-  pointer-events: initial;
-  padding: 10px 0;
+
+/*End Dropdown formatting*/
+
+
+
+/*TABLE FORMATTING*/
+table {border-collapse: collapse;width: 100%;}
+th, td {text-align: left; vertical-align: top; padding: 8px;}
+tr:nth-child(even){background-color:#f2f2f2}
+
+
+h1 {color:navy; line-height: normal;}
+h2 {color:#ff8c00;}
+h3 {color:#ff8c00}
+h4 {color:#ff8c00}
+#menu {line-height: 38px;}
+a {font-weight:bold}
+#menu a {background: #ff8c00;border-radius: 8px;color:
+#FFFFFF;font-weight:bold;padding: 3px 6px;text-decoration:
+none;margin:3px 6px;}
+#back-to-top {position: fixed;bottom: 0px;right: 0px;text-decoration:
+none;border-radius: 8px 8px 0 0;color: #ffffff;background-color:
+rgba(255, 140, 0, 0.60);font-size: 16px;padding: 6px;}
+
+hr {border-color:red} /*line diviers between entries*/
+.sundays {color:red;font-size: large;font-weight:bold} /* used for heading of Sundays and Solemnities */
+.feasts {color:magenta;font-size: large;font-weight:bold} /* used for headings of feasts and other important celebrations */
+.headings {color:blue;font-size: medium;font-weight:bold} /* used for all liturgical headings of each day */
+.designations {font-style:italic}
+.longnote{font-size: normal}
+.longnotept {margin-left: 20px; display: block;}
+.note{font-size: small; font-style:italic}
+.number {font-size: smaller;font-style:normal; font-weight:bold}
+.lothhdng {font-size: small;font-weight:bold;text-decoration:underline}/* heading of Liturgy of the Hours*/
+.lothinfo {font-size: small} /* the text of information under Liturgy of the Hours */
+.propcal {font-size: small;font-weight:bold;text-decoration:underline}/* heading of Proper Calendars */
+.propcalsub {font-size: small;font-style:italic} /*subheadings on Fridays for Proper Calendars heading*/
+.propcalinfo {font-size: small} /* the text of the celebrations under Proper Calendars section */
+.propcalbox {border: 1px solid green; padding:8px} /* this creates a box around the celebrations specific to the various churches e.g. Patron saints */
+.massinfo {font-size: small;margin-left: 30px; display: block;} /* this gives the information for each Mass under the main title */
+.evemass {font-size: smaller;} /* this notes the evening Mass to be celebrated on Saturdays and eves of Solemnities */
+.omittedcel {font-size: small;} /* this is the font for omitted celebrations in that year due to a higher ranked feast */
+span.r {font-size: medium;color:red} /* this is liturgical colour */
+span.g {font-size: medium;color:green} /* this is liturgical colour */
+span.v {font-size: medium;color:magenta} /* this is liturgical colour */
+span.w {font-size: medium;color:silver} /* this is liturgical colour */
+.tab { font-size: small; margin-left: 40px; }
+.readings { font-size: small; margin-left: 40px; color:green}/*titles R1, R2, etc for the readings*/
+.readingsinfo {font-size: small;margin-left: 30px; display: block;} /* this gives the information for each Mass under the main title */
+
+ul.mainlist1 {list-style-type: decimal;}/*main list as Roman numerals*/
+ul.mainlist2 {list-style-type: lower-alpha;}/*main list as Roman numerals*/
+ul li{padding: 5px;} /*spacing for main list*/
+
+ol.sublist1 {list-style-type: square;}/*sublist1 as bullet points*/
+ol.sublist2 {list-style-type: lower-alpha;}/*sublist2 as lowercase alphabets*/
+ol li {padding: 1px}/*spacing for sublists*/
+
+svg {width:90%;max-width:300px}
+</style>
+
+<noscript>
+<style type="text/css">
+#today {display:none}
+</style>
+</noscript>
+
+</head>
+<body>
+<!-- Dropdown Box formatting -->
+<ul id="navigationbar">
+  <li><a id="today" href="#">TODAY</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" onclick="myFunction(this)" class="dropbtn">Months</a>
+    <div class="dropdown-content">
+      <a href="#dec16" >Dec</a>
+      <a href="#jan">Jan</a>
+      <a href="#feb" >Feb</a>
+      <a href="#mar" >Mar</a>
+      <a href="#apr" >Apr</a>
+      <a href="#may" >May</a>
+      <a href="#jun" >Jun</a>
+      <a href="#jul" >Jul</a>
+      <a href="#aug" >Aug</a>
+      <a href="#sep" >Sep</a>
+      <a href="#oct" >Oct</a>
+      <a href="#nov" >Nov</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href=# onclick="myFunction(this)" class="dropbtn">Season</a>
+    <div class="dropdown-content">
+      <a href="#advent">Advent</a>
+      <a href="#christmastime">Christmas</a>
+      <a href="#lent">Lent</a>
+      <a href="#eastertime">Easter</a>
+      <a href="#ordtime1">Ordinary Time I</a>
+      <a href="#ordtime2">Ordinary Time II</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" onclick="myFunction(this)" class="dropbtn">Info</a>
+    <div class="dropdown-content">
+    <a href="#regulations">REGULATIONS</a> 
+    <a href="#calendarnotes">CALENDAR NOTES</a>
+    <a href="#mariandevotion">Forms of Marian Devotion</a>
+    <a href="#liturgicalcolours">Liturgical Colours</a>
+    <a href="#moveablefeasts">Moveable Feasts</a> 
+    <a href="#days of prayer">Days of Prayer</a> 
+    <a href="#collections"> Collections</a> 
+    <a href="#choiceofmass">Choice of Mass Texts</a>
+    <a href="#divergences">Divergences in weekend Obligation Masses</a>  
+    <a href="#arrangementofloth">Arrangement of Divine Office</a> 
+    <a href="#precedence">Table of Precedence</a> 
+    <a href="#abbrevscrip">Scripture Abbreviations</a>
+    <a href="#abbrevother">Other Abbreviations</a>
+    </div>
+  </li>
+</ul>
+
+<!-- End Dropdown Box formatting -->
+
+
+
+
+
+
+<div id="all">
+<h1>LITURGICAL CALENDAR 2017-8</h1>
+
+<h2>Year B for all Sundays<br>Cycle II during the week</h2>
+
+<div id="menu" style="">
+
+
+
+</div>
+</div>
+
+
+<a id="regulations"><h2>Regulations</h2></a>
+
+
+
+<a id="calendarnotes"><h2>Notes on the Calendar</h2></a>
+<ul class="mainlist1">
+</ul>
+
+<hr><hr><h2><a id="advent">ADVENT</a></h2><hr><hr>
+
+
+<hr><hr><h2><a id="dec16">DECEMBER 2017</a></h2> <hr><hr>
+<p><a id="d2016-12-01">1 December, Friday </a><br><br>
+MASS and READINGS of the following Sunday (1st Sunday of Advent)[<span class="v">v</span>]<br><br>
+<span class ="lothhdng">HOURS</span>: <span class ="lothinfo"> of Ordinary Time weekday (<a href="#hrm" >M</a>), PsWk 2; </span><br><br>
+<span class ="propcal">PROPER CALENDARS</span><br>
+<span class ="propcalsub">(omitted in parish Masses, but may be observed in the Liturgy of the Hours and commemorated in the Eucharistic Prayer)</span><br>
+<span class ="propcalinfo"><b>African:</b> Optional Memorial of Bl. Clementine Anuarite [<span class="w">w</span>]</span></p>
+<div class ="propcalbox"><i>In Salalah:</i><br><br>
+<span class="sundays">Solemnity of ST. FRANCIS XAVIER</span> [<span class="w">w</span>]<br>
+<i>Titular of the parish</i><br><br>
+<span class="massinfo">proper Mass; Gloria; Creed;  Preface of Pastors; optional Prayer over the People [n. 27/28]<br><br></span>
+<span class="readings">R1: </span>(Any suitable reading from the Common)<br>
+<span class="readings">RP: </span>Ps 116: 1-2<br>
+<span class="readings">R2: </span>1 Cor 9: 16-19, 22-23<br>
+<span class="readings">Go: </span>Mk 16: 15-20<br><br>
+<span class="note"><b>NOTES:</b> Plenary indulgence for visiting the church of St. Francis Xavier in Salalah, and there praying an 'Our Father' and the Creed (EI 33.1.5a)</span></div><hr>
+
+
+<hr><hr><h2><a id="jan">JANUARY 2018</a></h2><hr><hr>
+
+
+<hr><h3><a id="feb">FEBRUARY 2017</a></h3><hr><hr>
+
+<p><a id="d2017-02-09">1 February, Thursday</a><br>
+
+
+
+<hr><h3><a id="mar">MARCH 2017</a></h3><hr><hr>
+
+
+
+
+
+<hr><hr><h2><a id="eastertime">EASTER SEASON</a></h2><hr><hr>
+<span class="longnote">All the 50 days of the Easter Season, beginning with the Vigil of Easter and concluding with Pentecost Sunday are celebrated as one feast day, the “great Sunday”.<br><br>
+<b>Liturgical Notes:</b><br><br>
+
+
+<hr><h3><a id="apr">APRIL 2017</a></h3><hr><hr>
+
+<p><a id="d2017-03-29">01 April, Sunday</a><br>
+<span class="sundays">EASTER SUNDAY OF THE RESURRECTION OF THE LORD </span> [<span class="w">w</span>]<br>
+<span class="massinfo">proper Mass; Gloria; Creed; in Eucharistic Prayer I: proper <i>In communion</i> and <i>Therefore, O Lord</i>; Solemn Blessing of Easter (text under <i>Easter Vigil</i>); Dismissal with alleluias.<br> <b>N.B.</b> In some English-language missals of certain countries, the Creed is replaced with the Renewal of Baptismal Promises followed by the sprinkling of the people with baptismal water, a concession made to those countries.</span><br>
+<span class="readings">R1: </span>Acts 10: 34, 37-43<br>
+<span class="readings">RP: </span>Ps 117: 1-3, 16-17, 22-23<br>
+<span class="readings">R2: </span>Col 3: 1-4 <i>or</i> 1 Cor 5: 6-8<br>
+<span class="readings">Sequence (obl):</span>Christians to the Paschal Victim (Victimae Paschali)<br>
+<span class="readings">Go: </span>Jn 20: 1-9 <i>or</i> Mk 16: 1-8 <i>or</i> Lk 24: 13-35 (evening Mass)<br><br>
+<span class ="lothhdng">HOURS</span>:
+<span class ="lothinfo">of the Solemnity (<a href="#hrh" >A</a>);</span><br><br>
+<span class="note"><b>NOTES:</b><br>
+<span class="number">(1)</span> On this Sunday, and all the Sundays and solemnities of Eastertide, it is appropriate that when possible, the blessing and sprinkling of water replace the Penitential Act. In such a case, the Kyrie (Lord, have mercy) is omitted, and the Mass continues with the <i>Glory to God</i>. <br>
+<span class="number">(2)</span> Easter food may be blessed after the Mass (cf. Notes for the Easter Vigil) <br>
+<span class="number">(3)</span> If customary or desired, a salutation of the B.V. Mary may take place according to popular devotion; a suitable rite is given in the <i>Supplement</i><br>
+<span class="number">(4)</span> the celebration of Baptismal Vespers to conclude the Sacred Triduum, especially with the participation of the newly baptized is encouraged. A suitable rite is outlined in the <i>Supplement.</i></span></p><hr>
+
+
+<hr><h3><a id="may">MAY 2017</a></h3><hr><hr>
+<span class="longnote">The month of May is dedicated in popular devotion to the Blessed Virgin Mary. During the Easter Season, the 'Directory of Populary Piety' recommends that devotions harmonise with the theme of the Easter Season. Suggestions for suitable devotional practices in the various seasons may be found in the appendix. </span> <hr>
+
+<p><a id="d2017-05-01">1 May, Tuesday</a><br>
+
+
+
+<hr><hr><h2><a id="ordtime2">ORDINARY TIME II</a></h2><hr><hr>
+<span class="longnote">During Ordinary Time, “no particular aspect of the mystery of Christ is celebrated, but rather the mystery of Christ itself is honoured in its fullness, especially on Sundays” (UNLYC 43).<br><br> 
+<b>Liturgical Notes:</b><br>
+<ul class="mainlist2">
+  <li>Eucharistic Prayer IV has many characteristics (e.g. summary of salvation history) that commend its use on the Sundays of Ordinary Time. Six forms of Solemn Blessing are given for Ordinary Time (nn. 9-14) and fittingly used on Sundays.  </li>
+  
+  <li>Weekdays use the formulary of the preceding Sunday. However, they may also use the formulary of any other suitable Sunday in Ordinary Time, Votive Masses, Masses for the Dead, or Masses for Various Needs, as outlined in the section on 'Choice of Mass texts'. The Mass of the B.V. Mary on Saturday or days of Marian novenas is especially encouraged.</li></ul>
+</span><hr>
+
+<p><a id="d2017-05-21">21 May, Monday</a><br>
+
+
+
+<hr><h3><a id="jun">JUNE 2017</a></h3><hr><hr>
+
+
+
+
+<hr><h3><a id="jul">JULY 2017</a></h3><hr><hr>
+
+
+
+
+<hr><h3><a id="aug">AUGUST 2017</a></h3><hr><hr>
+
+
+
+
+<hr><h3><a id="sep">SEPTEMBER 2017</a></h3><hr><hr>
+
+
+<span class="note"><b>NOTES:</b> Today is the 'World Day for the Care of Creation', instituted by Pope Francis to invoke God’s help for the protection of creation and renew our vocation as its custodians. </span></p><hr>
+
+<hr><h3><a id="oct">OCTOBER 2017</a></h3><hr><hr>
+<span class="longnote">The month of October is dedicated in popular devotion to the rosary of the Blessed Virgin Mary. Suggestions for suitable Marian devotional practices in the various seasons may be found in the appendix. </span> <hr>
+
+<p><a id="d2017-10-01">1 October, Monday</a><br>
+
+
+
+
+<hr><h3><a id="nov">NOVEMBER 2017</a></h3><hr><hr>
+
+<p><a id="d2017-11-01">1 November, Thursday</a><br>
+<span class="sundays">Solemnity of ALL SAINTS</span> [<span class="w">w</span>]<br>
+<span class="massinfo">proper Mass of Solemnity; Gloria; Creed; proper Preface; optional Solemn Blessing of All Saints [n. 18]</span><br>
+<span class="readings">R1: </span>Apoc 7: 2-4, 9-14<br>
+<span class="readings">RP: </span>Ps 23: 1-6<br>
+<span class="readings">R2: </span>1 Jn 3: 1-3<br>
+<span class="readings">Go: </span>Mt 5: 1-12<br><br>
+<span class ="lothhdng">HOURS</span>: <span class ="lothinfo"> of the Solemnity (<a href="#hra" >A</a>). </span><br><br>
+<span class="note"><b>NOTES:</b> If the Litany of Saints is sung for the entrance procession of the Mass, the introductory rites are omitted. After the kissing and incensing of the altar, Mass continues with the 'Glory to God' and the Collect.  </span></p><hr>
+
+
+
+
+<a id="mariandevotion"><h2>FORMS OF MARIAN DEVOTION</h2></a>
+
+<p>The forms of devotion mentioned here are drawn from the <i>Guidelines and Proposals for a Marian Year</i> (GMY), issued by the Congregation of Divine Worship in 1987 and commended by the <i>Directory of Popular Piety</i>. They are especially suitable for periods dedicated to the Virgin Mary (e.g.  the months of May and October).</p>
+
+
+<a id="abbrevscrip"><h2>Scriptural Abbreviations</h2></a>
+<h4>OLD TESTAMENT</h4>
+
+
+
+<a id="liturgicalcolours"><h2>Liturgical Colours</h2></a>
+
+<p><b>Extra-liturgical observances</b> or occasions (e.g. National Day, Creation Sunday, Vocation Sunday etc.) do not affect the vestment colour.</p>
+
+
+
+
+<a id="moveablefeasts"><h2>Moveable Feasts of the Year</h2></a>
+
+
+
+<a id="daysofprayer"><h2>Special Days of Prayer in the Year</h2></a>
+<p><i>A plenary indulgence is granted to the faithful who, on days universally designated to foster certain
+religious intentions, piously assist at celebrations of this kind (EI 5).</i></p> 
+
+
+<a id="collections"><h2>Collections in the Year</h2></a>
+
+
+<a id="choiceofmass"><h2>Choice of Mass Text</h2></a>
+
+
+<a id="divergences"><h2>Divergences in Weekend Obligation Masses</h2></a>
+<p><i>This table is provided to assist preachers, choir directors and others concerned in identifying the weekends on which the Mass formularies (especially the readings) for Masses fulfilling the 'Sunday obligation' will differ between Friday, Saturday and Sunday. <br><br>Days marked with a <span class="r">*</span> indicate permission by the Apostolic Vicar to use the same readings as the Mass celebrated on Sunday, for ease of preachers.</i></p> 
+
+
+
+<a id="precedence"><h2>Table of Precedence of Liturgical Days</h2></a> <br><br>
+<b>I</b><br><br>
+
+<br>
+
+<a id="arrangementofloth"><h2>Arrangement of the Divine Office</h2><br></a>
+
+
+
+<hr>
+<hr>
+<p><a id="c">MOBILE-FRIENDLY VERSION of 2017 Liturgical Calendar</a></p>
+<p>AVOSA Communications Office</p>
+<p>Imprimatur: + PAUL HINDER<br>
+Apostolic Vicar of Southern Arabia<br>
+23rd October 2017<br>
+
+<p>[Other address info]</p>
+
+<a href="#" id="back-to-top">TOP</a>
+
+<script type="text/javascript">
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+if(dd<10) {
+ dd='0'+dd
 }
-.drawer__arrow {
-  font-weight: 900;
-  font-size: 1.2rem;
-  transition: transform 0.2s;
+if(mm<10) {
+ mm='0'+mm
+}
+today = '#d'+yyyy+'-'+mm+'-'+dd;
+document.getElementById('today').href = today;
+</script>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+var myFunction = function(target) {
+   target.parentNode.querySelector('.dropdown-content').classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
+
 }
 .drawer input:checked ~ .drawer__name > .drawer__arrow {
   transform: rotateZ(90deg);
