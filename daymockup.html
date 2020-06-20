@@ -4,10 +4,29 @@
 <style>
 
 
+body {
+    font-family:  Verdana, Arial, sans-serif;
+}
+
+.date { /*format each days date entry*/
+  font-size: 40px;
+  font-weight: bold;
+}  
+
+.additionalentrytext { /*format additional text in each entry*/
+  font-size: 40px;
+  font-weight: normal;
+  font-style: italic;
+  margin-left:1em;
+
+}  
+
 .italics {
   font-style: italic;
   font-weight: normal;
 }
+
+
 .feasttitlebox { /*Format 'details' tag for day titles*/
   color: black;
   font-weight: bold;
@@ -24,15 +43,78 @@ summary:focus {
 }
 .feastdetails { /*format collapsible box entries*/
   background: #F9EBEA;
-  font-size:40px;
   color: black;
   padding: 30px;
   border-radius: 0 0 4px 4px;
+  font-size:40px;
+  list-style: none;
 }
-feastdetailslist {/*format each individual list item in collapsible box*/
-  margin-left: 100px;
-  margin-top: 40px;
-  margin-bottom: 1em;
+
+/*READINGS*/
+.readingstitle { /*Format 'details' tag for readings*/
+  color: black;
+  font-weight: normal;
+  width: 100%;
+  font-size:45px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-left: 3em;
+}
+
+.readingsdetails { /*format collapsible box entries for readings*/
+  background: #F2F4F4;
+  color: black;
+  padding: 30px;
+  border-radius: 4px 4px 4px 4px;
+  font-size:40px;
+  margin-left: 1em;
+  list-style: none;
+
+}
+/*End READING Formatting*/
+/*Begin PROPER SAINTS Formatting*/
+
+.propersaints { /*Format 'details' tag for day titles*/
+  color: black;
+  font-weight: normal;
+  width: 100%;
+  font-size:40px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+/*End PROPER SAINTS Formatting*/
+
+
+/*Coloured squares coding*/
+.greendot {
+  height: 40px;
+  width: 40px;
+  background-color: green;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.5em;
+
+}
+
+.purpledot {
+  height: 40px;
+  width: 40px;
+  background-color: purple;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.5em;
+
+}
+
+.whitedot {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border:3px solid black;    
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.5em;
+
 }
 
 </style>
@@ -40,26 +122,55 @@ feastdetailslist {/*format each individual list item in collapsible box*/
 <body>
 
 
-<h2> 30 November, 2020</h2>
-<h3>At Morning (Daily) Mass:</h3>
-  <details open>
-  <summary class="feasttitlebox">Saturday Memorial of the B.V. Mary, <span class=italics>opt. mem.</span></summary>
-  <ul class="feastdetails">
-    <li class="feastdetailslist"><b>MASS:</b><br><br> any Mass from the Common of the Virgin Mary, or from the Votive Masses of the Virgin Mary in the Roman Missal; Preface of the B.V. Mary I-II<br> or<br> Mass from the appropriate section of Marian Sacramentary (Collection of Masses of the B.V. Mary); corresponding proper Preface.</li><br>
-    <li class="feastdetailslist"><b>HOURS:</b><br><br> At Office of Readings and Morning Prayer, from the Saturday Memorial of the B.V. Mary with psalms of the Saturday, Psalm Week 2. First Reading at Morning Prayer from Ord. Time Saturday Week 34. Daytime Prayer from psalter. Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
-  </ul>
-  </details>
-  <h3>or:</h3>
-  <details open>
-  <summary class="feasttitlebox">Saturday in Ord. Time Week 34</summary>
-  <ul class="feastdetails">
-    <li class="feastdetailslist"><b>MASS:</b><br><br> Mass of the 34th Week in Ordinary Time, or any Sunday, or of choice. </li><br>
-    <li class="feastdetailslist"><b>HOURS:</b><br><br> At Office of Readings, readings and responsories from Ord. Time Saturday, Week 34; Collect of 34th Week. Morning and Daytime Prayer from the Psalter, Psalm Week 2. Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+<span class="date"> 30 November, 2020</span><br><br><br>
+<span class = "additionalentrytext">At Morning (Daily) Mass:</span>
+            <details>
+            <summary class="feasttitlebox">Saturday Memorial of the B.V. Mary, <span class=italics>opt. mem.			</span><span class="whitedot"></span></summary>
+            <ul class="feastdetails">
+              <li class="feastdetailslist"><b>MASS:</b><br><br> any Mass from the Common of the Virgin Mary, 				or from the Votive Masses of the Virgin Mary in the Roman Missal; Preface of the B.V. Mary I-				II<br> or<br> Mass from the appropriate section of Marian Sacramentary (Collection of Masses of 				the B.V. Mary); corresponding proper Preface.</li><br>
+              <li class="feastdetailslist"><b>HOURS:</b><br><br> At Office of Readings and Morning Prayer, 					from the Saturday Memorial of the B.V. Mary with psalms of the Saturday, Psalm Week 2. First 					Reading at Morning Prayer from Ord. Time Saturday Week 34. Daytime Prayer from psalter. 					Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+            </ul>
+            </details>
+            <span class = "additionalentrytext">or:</span>
+            <details>
+            <summary class="feasttitlebox"> Saturday in Ord. Time Week 34<span class="greendot"></span></summary>
+                <ul class="feastdetails">
+                    <li class="feastdetailslist">
+                    <b>MASS:</b><br><br> Mass of the 34th Week in Ordinary Time, or any Sunday, or of choice. 							</li><br>
+                    <li class="feastdetailslist"><b>HOURS:</b><br><br> 
+At Office of Readings, readings and responsories from Ord. Time Saturday, Week 34; Collect of 34th Week. Morning and Daytime Prayer from the Psalter, Psalm Week 2. Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+                </ul>
+            </details>
+            <br><br>
+<details>
+  <summary class= "readingstitle">Readings</summary>
+  <ul class = "readingsdetails">
+    <li><b>R1:</b> Daniel 3:13-15 </li>
+    <li><b>RP:</b> Psalm 141:1-2, 5-6, 13-15</li>
+    <li><b>Go:</b> Matthew 1:14-16</li>
   </ul>
 </details>
-<h3>At Obligatory Masses:</h3>
-<details open>
-  <summary class="feasttitlebox">First Sunday of Advent</summary>
+            <br><br>
+<details>
+  <summary class= "readingstitle">Permitted Masses</summary>
+  <ul class = "readingsdetails">
+    <li><b>Ritual</b>(e.g. Confirmation, Marriage): any </li>
+    <li><b>Dead</b>: any</li>
+    <li><b>Votive</b>: any</li>
+    <li><b>Various Needs</b> (e.g. Anniversaries): any</li>
+  </ul>
+</details>
+<br><br>
+<span class = "propersaints"> <b>St. Angelo of Acri</b> (opt. mem., Capuchin)</span><br>
+<span class = "propersaints"> <b>Bl. Philip Rinaldi</b> (mem., Salesian)</span>
+
+
+
+
+<br><br><br><br>
+<span class = "additionalentrytext">At Obligatory Masses:</span>
+<details>
+  <summary class="feasttitlebox">First Sunday of Advent<span class="purpledot"></span></summary>
   <ul class="feastdetails">
     <li class="feastdetailslist"><b>MASS:</b><br><br> of the First Sunday of Advent from the Proper of Seasons; no Gloria; Creed; Preface of Advent I; optional Solemn Blessing of Advent </li><br>
   <li class="feastdetailslist"><b>READINGS:</b><br><br> (insert readings of Sunday) </li>
@@ -68,15 +179,7 @@ feastdetailslist {/*format each individual list item in collapsible box*/
   </details>
 
 
-<details>
-  <summary>Drawer 2</summary>
-  <ul>
-    <li class="feastdetailslist">Thing 1</li>
-    <li>Thing 2</li>
-    <li>Thing 3</li>
-    <li>Thing 4</li>
-  </ul>
-</details>
+
 
 </body>
 </html>
