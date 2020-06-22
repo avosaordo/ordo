@@ -8,24 +8,51 @@ body {
     font-family:  Verdana, Arial, sans-serif;
 }
 
-.date { /*format each days date entry*/
-  font-size: 40px;
-  font-weight: bold;
-}  
+hr { 
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  border-width: 2px;
+  border-color:maroon;
+} 
 
-.additionalentrytext { /*format additional text in each entry*/
+/*DATE FOR EACH ENTRY*/
+.date { 
+  font-size: 60px;
+  font-weight: bold;
+  background: black;
+  width:100%;
+  padding:5px;
+  color:white;
+} /*end DATE FOR EACH ENTRY*/
+  
+
+/*ADDITIONAL TEXT FOR EACH ENTRY e.g. or, 'At Morning Mass', etc. */
+.additionalentrytext { 
   font-size: 40px;
   font-weight: normal;
   font-style: italic;
   margin-left:1em;
+  color: navy;
 
-}  
+}  /*end ADDITIONAL TEXT FOR EACH ENTRY*/
 
-.italics {
+
+/*LITURGICAL RANK FOR EACH ENTRY*/
+.liturgicalrank {
   font-style: italic;
   font-weight: normal;
-}
+  
+}/*end LITURGICAL RANK FOR EACH ENTRY*/
 
+/*PSALM WEEK*/
+.psalmweek {
+  font-style: italic;
+  font-weight: normal;
+  
+}/*end LITURGICAL RANK FOR EACH ENTRY*/
+
+
+/*TITLES FOR EACH FEAST ENTRY*/
 
 .feasttitlebox { /*Format 'details' tag for day titles*/
   color: black;
@@ -49,9 +76,47 @@ summary:focus {
   font-size:40px;
   list-style: none;
 }
+.infoheadings{
+  font-weight: bold;
+}/*end TITLES FOR EACH FEAST ENTRY*/
+
+
+/*PERMITTED MASSES*/
+.rrvvheading { /*Format 'details' tag for Permitted Masses*/
+  color: black;
+  font-weight: normal;
+  width: 100%;
+  font-size:45px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-left: 3em;
+}
+
+.rrvvdetails { /*format collapsible box entries for permitted Masses*/
+  background: #F2F4F4;
+  color: black;
+  padding: 30px;
+  border-radius: 4px 4px 4px 4px;
+  font-size:40px;
+  margin-left: 1em;
+  list-style: none;
+
+}
+
+.rrvvtitle { /*format Ritual, Dead, etc. etc.*/
+  font-weight: bold;
+  color: black;
+}  
+
+.rrvvexpl { /*format any permitted mass explanations etc.*/
+  font-weight: normal;
+  font-style: italic;
+  color: black;
+  
+}/*End PERMITTED MASS Formatting*/
 
 /*READINGS*/
-.readingstitle { /*Format 'details' tag for readings*/
+.readingsheading { /*Format 'details' tag for readings*/
   color: black;
   font-weight: normal;
   width: 100%;
@@ -69,21 +134,63 @@ summary:focus {
   font-size:40px;
   margin-left: 1em;
   list-style: none;
-
 }
-/*End READING Formatting*/
-/*Begin PROPER SAINTS Formatting*/
 
-.propersaints { /*Format 'details' tag for day titles*/
+.readingstitle { /*format R1, RP, R2, etc.*/
+  font-weight: bold;
+  color: green;
+} /*End READING Formatting*/
+
+/*NOTES*/
+.notesheading { /*Format 'details' tag for readings*/
   color: black;
   font-weight: normal;
   width: 100%;
-  font-size:40px;
+  font-size:45px;
   border-radius: 4px;
   margin-bottom: 5px;
+  margin-left: 3em;
 }
-/*End PROPER SAINTS Formatting*/
 
+.notesdetails { /*format collapsible box entries for readings*/
+  background: #F2F4F4;
+  color: black;
+  padding: 30px;
+  border-radius: 4px 4px 4px 4px;
+  font-size:40px;
+  margin-left: 1em;
+  list-style: none;
+}
+
+.notestitle { /*format R1, RP, R2, etc.*/
+  font-weight: bold;
+  color: green;
+} /*End NOTES Formatting*/
+
+
+/* PROPER SAINTS Formatting*/
+.proper{ 
+  color: black;
+  font-size:40px;
+  margin:1em;
+} 
+
+.propersaint{ 
+  font-weight: bold;
+}
+
+.propercal{ 
+  font-weight: normal;
+}/*End PROPER SAINTS Formatting*/
+
+/*OBLIGATORY MASS Formatting*/
+.obligatory{ 
+  color: white;
+  font-size:40px;
+  background-color:red;
+  padding: 5px;
+  
+} /*End OBLIGATORY MASS Formatting*/
 
 /*Coloured squares coding*/
 .greendot {
@@ -105,6 +212,15 @@ summary:focus {
   margin-left: 0.5em;
 
 }
+.reddot {
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.5em;
+
+}
 
 .whitedot {
   height: 40px;
@@ -113,70 +229,511 @@ summary:focus {
   border:3px solid black;    
   border-radius: 0%;
   display: inline-block;
-  margin-left: 0.5em;
 
 }
 
+.smallgreendot {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.2em;
+}
+
+.smallpurpledot {
+  height: 20px;
+  width: 20px;
+  background-color: purple;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.2em;
+}
+.smallreddot {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  border-radius: 0%;
+  display: inline-block;
+  margin-left:0.2em;
+
+}
+
+.smallwhitedot {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border:3px solid black;    
+  border-radius: 0%;
+  display: inline-block;
+  margin-left: 0.2em;
+}
 </style>
 </head>
 <body>
 
+<!-- NEW ENTRY -->
+<span class="date"> Friday, 27 November 2020</span><br><br>
+<!-- Main Entry 1 -->
 
-<span class="date"> 30 November, 2020</span><br><br><br>
-<span class = "additionalentrytext">At Morning (Daily) Mass:</span>
-            <details>
-            <summary class="feasttitlebox">Saturday Memorial of the B.V. Mary, <span class=italics>opt. mem.			</span><span class="whitedot"></span></summary>
+  <!-- OBLIGATORY MASSES -->
+      <span class = "obligatory">At Obligatory Masses:</span>
+        <details>
+          <summary class="feasttitlebox">First Sunday of Advent
+          	<span class="purpledot"></span>
+          </summary>
             <ul class="feastdetails">
-              <li class="feastdetailslist"><b>MASS:</b><br><br> any Mass from the Common of the Virgin Mary, 				or from the Votive Masses of the Virgin Mary in the Roman Missal; Preface of the B.V. Mary I-				II<br> or<br> Mass from the appropriate section of Marian Sacramentary (Collection of Masses of 				the B.V. Mary); corresponding proper Preface.</li><br>
-              <li class="feastdetailslist"><b>HOURS:</b><br><br> At Office of Readings and Morning Prayer, 					from the Saturday Memorial of the B.V. Mary with psalms of the Saturday, Psalm Week 2. First 					Reading at Morning Prayer from Ord. Time Saturday Week 34. Daytime Prayer from psalter. 					Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+              <li class="feastdetailslist">
+                <span class="infoheadings">MASS:</span><br><br> of the First Sunday of Advent from the Proper of Seasons; <u>Gloria omitted</u>; <u>Creed</u>; Preface of Advent I; optional Solemn Blessing of Advent </li><br>
+                <li class="feastdetailslist"><span class="infoheadings">READINGS:</span><br><br> 
+                  <ul class = "readingsdetails">
+                      <li><span class = "readingstitle">R1:</span> Isaiah 63:16-17, 19; 64:2-7 </li>
+                      <li><span class = "readingstitle">RP:</span> Psalm 80:2-3,15-16,18-19</li>
+                      <li><span class = "readingstitle">R2:</span> 1 Corinthians 1:3-9 </li>
+                      <li><span class = "readingstitle">Go:</span> Mark 13:33-37</li>
+                  </ul>
+              </li>
             </ul>
-            </details>
-            <span class = "additionalentrytext">or:</span>
-            <details>
-            <summary class="feasttitlebox"> Saturday in Ord. Time Week 34<span class="greendot"></span></summary>
-                <ul class="feastdetails">
-                    <li class="feastdetailslist">
-                    <b>MASS:</b><br><br> Mass of the 34th Week in Ordinary Time, or any Sunday, or of choice. 							</li><br>
-                    <li class="feastdetailslist"><b>HOURS:</b><br><br> 
-At Office of Readings, readings and responsories from Ord. Time Saturday, Week 34; Collect of 34th Week. Morning and Daytime Prayer from the Psalter, Psalm Week 2. Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
-                </ul>
-            </details>
-            <br><br>
-<details>
-  <summary class= "readingstitle">Readings</summary>
-  <ul class = "readingsdetails">
-    <li><b>R1:</b> Daniel 3:13-15 </li>
-    <li><b>RP:</b> Psalm 141:1-2, 5-6, 13-15</li>
-    <li><b>Go:</b> Matthew 1:14-16</li>
-  </ul>
+        </details>
+        
+<details> <summary class = "additionalentrytext">Non-Obligation Masses and Hours</summary>
+<!-- Main Entry 1 -->
+    <details>
+      <summary class="feasttitlebox"> Friday in Ord. Time Week 34
+      	<span class="greendot"></span>
+      </summary>
+        <ul class="feastdetails">
+          <!-- Details of Mass -->
+          <li class="feastdetailslist"><span class="infoheadings">MASS:</span><br><br>Mass of the 34th Week in Ordinary Time, or any Sunday, or of choice.</li><br>
+          <!-- Details of Hours -->
+          <li class="feastdetailslist"><span class="infoheadings">HOURS: </span><span class="psalmweek">(Psalm Week 2)</span><br><br> All from the weekday and psalter. </li>
+        </ul>
+    </details>
+  <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Revelation 20:1-4, 11-21:2 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 84:3-6, 8</li>
+          <li><span class = "readingstitle">Go:</span> Luke 21:29-33</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: any </li>
+          <li><span class = "rrvvtitle">Dead</span>: any</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: any</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: any</li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- PROPER SAINTS -->
+      <span class = "proper">
+          <span class = "propersaint">St. Francis Anthony Fasani</span>, 
+          <span class="liturgicalrank">mem.</span>, 
+          <span class="propercal">Capuchin</span>)
+          <span class="smallwhitedot"></span>
+      </span>
 </details>
-            <br><br>
-<details>
-  <summary class= "readingstitle">Permitted Masses</summary>
-  <ul class = "readingsdetails">
-    <li><b>Ritual</b>(e.g. Confirmation, Marriage): any </li>
-    <li><b>Dead</b>: any</li>
-    <li><b>Votive</b>: any</li>
-    <li><b>Various Needs</b> (e.g. Anniversaries): any</li>
-  </ul>
-</details>
-<br><br>
-<span class = "propersaints"> <b>St. Angelo of Acri</b> (opt. mem., Capuchin)</span><br>
-<span class = "propersaints"> <b>Bl. Philip Rinaldi</b> (mem., Salesian)</span>
+<hr>
+
+
+<!-- NEW ENTRY -->
+<span class="date"> Saturday, 28 November 2020</span><br><br><br>
+<!-- Main Entry 1 -->
+
+
+<span class = "additionalentrytext">At Morning (Daily) Mass:</span>
+    <details>
+      <summary class="feasttitlebox">Saturday Memorial of the B.V. Mary, 
+        <span class=liturgicalrank>opt. mem.</span>
+        <span class="whitedot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist"><span class="infoheadings">MASS:</span><br><br> any Mass from the Common of the Virgin Mary, or from the Votive Masses of the Virgin Mary in the Roman Missal; Preface of the B.V. Mary I-II
+            <br>or<br> 
+            Mass from the appropriate section of Marian Sacramentary (Collection of Masses of the B.V. Mary); corresponding proper Preface.</li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist"><span class="infoheadings">HOURS: </span><span class="psalmweek">(Psalm Week 2)</span><br><br> At Office of Readings and Morning Prayer, from the Saturday Memorial of the B.V. Mary. First Reading at Office of Readings from Ord. Time Saturday Week 34. <br><br>Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+        </ul>
+<!-- Main Entry 2 -->
+    </details>
+   <span class = "additionalentrytext">or:</span>
+    <details>
+      <summary class="feasttitlebox"> Saturday in Ord. Time Week 34
+      	<span class="greendot"></span>
+      </summary>
+        <ul class="feastdetails">
+          <!-- Details of Mass -->
+          <li class="feastdetailslist"><span class="infoheadings">MASS:</span><br><br>Mass of the 34th Week in Ordinary Time, or any Sunday, or of choice.</li><br>
+          <!-- Details of Hours -->
+          <li class="feastdetailslist"><span class="infoheadings">HOURS: </span><span class="psalmweek">(Psalm Week 2)</span><br><br> All from the weekday and psalter. Evening Prayer I of the First Sunday of Advent, Psalm Week 1. </li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Revelation 22:1-75 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 94:1-7</li>
+          <li><span class = "readingstitle">Go:</span> Luke 21:34-36</li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: any </li>
+          <li><span class = "rrvvtitle">Dead</span>: any</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: any</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: any</li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- PROPER SAINTS -->
+      <span class = "proper">
+          <span class = "propersaint">St. James of the Marche</span> 
+          (<span class="liturgicalrank">opt. mem.</span>, 
+          <span class="propercal">Capuchin</span>)
+          <span class="smallwhitedot"></span>
+      </span><br>
+  <br>
+  <br>
+  <!-- OBLIGATORY MASSES -->
+      <span class = "obligatory">At Obligatory Masses:</span>
+        <details>
+          <summary class="feasttitlebox">First Sunday of Advent
+          	<span class="purpledot"></span>
+          </summary>
+            <ul class="feastdetails">
+              <li class="feastdetailslist">
+                <span class="infoheadings">MASS:</span><br><br> of the First Sunday of Advent from the Proper of Seasons; <u>Gloria omitted</u>; <u>Creed</u>; Preface of Advent I; optional Solemn Blessing of Advent </li><br>
+                <li class="feastdetailslist"><span class="infoheadings">READINGS:</span><br><br> 
+                  <ul class = "readingsdetails">
+                              <li><span class = "readingstitle">R1:</span> Isaiah 63:16-17, 19; 64:2-7 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 80:2-3,15-16,18-19</li>
+          <li><span class = "readingstitle">R2:</span> 1 Corinthians 1:3-9 </li>
+          <li><span class = "readingstitle">Go:</span> Mark 13:33-37</li>
+                  </ul>
+              </li>
+            </ul>
+        </details>
+<hr>
+
+<!-- NEW ENTRY -->
+<span class="date"> Sunday, 29 November 2020</span><br><br><br>
+<!-- Main Entry 1 -->
+
+
+    <details>
+      <summary class="feasttitlebox">First Sunday of Advent 
+        <span class="purpledot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">MASS:</span><br><br>
+            of the First Sunday of Advent from the Proper of Seasons; <u>no Gloria</u>;<u> Creed;</u> Preface of Advent I; optional Solemn Blessing of Advent</li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">HOURS:</span>
+            <span class="psalmweek">(Psalm Week 1)</span>
+            <br><br> all from the Sunday with psalms from the psalter </li>
+        </ul>
+   </details><br><br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Isaiah 63:16-17, 19; 64:2-7 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 80:2-3,15-16,18-19</li>
+          <li><span class = "readingstitle">R2:</span> 1 Corinthians 1:3-9 </li>
+          <li><span class = "readingstitle">Go:</span> Mark 13:33-37</li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: none </li>
+          <li><span class = "rrvvtitle">Dead</span>: none</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: none</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: none</li>
+        </ul>
+    </details>
+  <br><br>
+  <!-- PROPER SAINTS -->
+<span class = "proper"><span class = "propersaint">The proper celebration of All Franciscan Saints (<span class="liturgicalrank">Feast</span>, <span class="propercal">Capuchin</span>) is omitted this year.</span>
+<hr>
+
+<!-- NEW ENTRY -->
+<span class="date"> Monday, 30 November 2020</span><br><br>
+
+<!-- Main Entry 2 -->
+    <details>
+      <summary class="feasttitlebox"> St. Andrew the Apostle
+      	        <span class=liturgicalrank>Feast</span>
+				<span class="reddot"></span>
+      </summary>
+        <ul class="feastdetails">
+          <!-- Details of Mass -->
+          <li class="feastdetailslist">
+          <span class="infoheadings">MASS:</span><br><br>
+          of the Feast from the Proper of Saints; Gloria; Preface of Apostles I</li><br>
+          <!-- Details of Hours -->
+          <li class="feastdetailslist">
+          <span class="infoheadings">HOURS: </span>
+          <span class="psalmweek"></span><br><br> 
+          All from the Proper of Saints or Common. At Office of Readings, Te Deum is prayed. Psalms at Daytime Prayer from Monday, PsWk 1. Night Prayer of Monday.  </li>
+        </ul>
+    </details>
+  <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Romans 10: 9-18</li>
+          <li><span class = "readingstitle">RP:</span> Psalm 19:2-5</li>
+          <li><span class = "readingstitle">Go:</span> Matthew 4:18-22</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Saints of the day </span>: No </li>
+		  <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: Any </li>
+          <li><span class = "rrvvtitle">Dead</span>: Funeral</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: with Bishop's permission</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: with Bishop's permission</li>
+        </ul>
+    </details>
+<hr>
+
+<!-- NEW ENTRY -->
+<span class="date"> Tuesday,1 December 2020</span><br><br>
+<!-- Main Entry 1 -->
+
+    <details>
+      <summary class="feasttitlebox">Tuesday in Advent Week 1 
+        <span class="purpledot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">MASS:</span><br><br>
+            of the Advent weekday; Preface of Advent I</li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist"><span class="infoheadings">HOURS: </span><span class="psalmweek">(Psalm Week 1)</span><br><br> from the Advent weekday, with psalms of the day. </li>
+        </ul>
+    </details>
+  <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Isaiah 11:1-10 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm  72:1-2, 7-8, 12-13, 17</li>
+          <li><span class = "readingstitle">Go:</span> Luke 10:21-24</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: any </li>
+          <li><span class = "rrvvtitle">Dead</span>: Funeral, Final Burial, News of Death, First Anniversary</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: with Bishops' permission; or pastoral judgement of celebrant/rector</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: with Bishops' permission; or pastoral judgement of celebrant/rector</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PROPER SAINTS -->
+      <span class = "proper">
+          <span class = "propersaint">Bl. Clemente Anuarite </span> 
+          (<span class="liturgicalrank">opt. mem.</span>, 
+          <span class="propercal">African</span>)
+          <span class="smallreddot"></span>
+      </span><br>
+<hr>
+
+<!-- NEW ENTRY -->
+<span class="date"> Wednesday, 2 December 2020</span><br><br>
+<!-- Main Entry 1 -->
+    <details>
+      <summary class="feasttitlebox">Wednesday in Advent Week 1 
+        <span class="purpledot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">MASS:</span><br><br>
+            of the Advent weekday; Preface of Advent I </li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">HOURS: </span>
+            <span class="psalmweek">(Psalm Week 1)</span><br><br> from the Advent weekday, with psalms of the day </li>
+        </ul>
+    </details>
+  <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> Isaiah 25:6-10 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 22:1-6</li>
+          <li><span class = "readingstitle">Go:</span> Matthew 15:29-37</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+      <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: any </li>
+          <li><span class = "rrvvtitle">Dead</span>: Funeral, Final Burial, News of Death, First Anniversary</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: with Bishops' permission; or pastoral judgement of celebrant/rector</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: with Bishops' permission; or pastoral judgement of celebrant/rector</li>
+        </ul>
+    </details>
+  <br>
+  <!-- NOTES -->
+      <details>
+      <summary class= "notesheading">Note on UAE National Day</summary>
+        <ul class = "notesdetails">
+          <li><span class = "notestitle">Mass </span>
+          :the Collect "For the Nation or State" (Various Needs n. 21) may replace the Opening Collect of the Mass </li><br>
+          <li><span class = "notestitle">Prayer of the Faithful</span>: a suitable intention may be included for the country and rulers</li><br>
+          <li><span class = "notestitle">Outside of Mass </span>: the <i>Order for a Blessing in Thanksgiving</i> (Book of Blessing 1969-1979) may be followed, substituting the intercessions with the <i>Te Deum</i> (<i>Holy God, we praise thy name</i> or another vernacular paraphrase) or the <i>Magnificat</i>. The Concluding Prayer may be taken from one of the Votive Collects of the Missal (Various Needs nn. 21-24).</li><br>
+          <li><span class = "notestitle">N.B.</span> Other patriotic manifestations (e.g. national anthem) should take place outside of Mass and preferably outside of the church building. Ceremonies of a religious character, asking for the divine blessing/guidance of the nation is permitted within the church.</li><br>
+        </ul>
+    </details>
+  <br>
+  <!-- PROPER SAINTS -->
+      <span class = "proper">
+          <span class = "propersaint">Bl. Maria Angela Astorch, </span>Capuchin Poor Clare ( 
+          <span class="liturgicalrank">opt. mem.</span>, 
+          <span class="propercal">Capuchin</span>)
+          <span class="smallwhitedot"></span>
+      </span><br>
+<hr>
+
+<!-- NEW ENTRY -->
+<span class="date"> Thursday, 3 December 2020</span><br><br>
+<!-- Main Entry 1 -->
+
+
+    <details>
+      <summary class="feasttitlebox">St. Francis Xavier, Patron of Missions,  
+        <span class=liturgicalrank>Feast</span>
+        <span class="whitedot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist"><span class="infoheadings">MASS:</span><br><br> of the saint, from the Proper of Saints; Gloria; Preface of Holy Pastors or of Saints I-II </li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">HOURS: </span>
+            <br><br> 
+            At Office of Readings, Morning Prayer and Evening Prayer, all (including psalms) from the Proper and Common of Saints. Psalms at Daytime Prayer from Thursday, PsWk 2, rest from the Proper/Common of Saints. Night Prayer of Thursday. </li>
+        </ul>
+    </details>
+ <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li><span class = "readingstitle">R1:</span> 1 Corinthians 9:16-19, 22-23 </li>
+          <li><span class = "readingstitle">RP:</span> Psalm 116:1-2</li>
+          <li><span class = "readingstitle">Go:</span> Mark 16: 15-20</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Saints of the day </span>: No </li>
+		  <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: Any </li>
+          <li><span class = "rrvvtitle">Dead</span>: Funeral</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: with Bishop's permission</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: with Bishop's permission</li>
+        </ul>
+    </details>
+      <br> 
+ <details><summary class="additionalentrytext">Salalah: Solemnity of St. Francis Xavier, Titular of the church  
+      </summary> 
+     <details>
+       <summary class="feasttitlebox">St. Francis Xavier, Titular of the Church,   
+        <span class=liturgicalrank>Solemnity</span>
+        <span class="whitedot"></span>
+      </summary>
+        <ul class="feastdetails">
+        <!-- Details of Mass -->
+            <li class="feastdetailslist"><span class="infoheadings">MASS:</span><br><br> of the saint, from the Proper of Saints; Gloria; Creed Preface of Holy Pastors or of Saints I-II </li><br>
+            <!-- Details of Hours -->
+            <li class="feastdetailslist">
+            <span class="infoheadings">HOURS: </span>
+            <br><br> 
+            At Office of Readings, Morning Prayer and Evening Prayer, all (including psalms) from the Proper and Common of Saints. Complementary Psalms at Daytime Prayer, rest from the Proper/Common of Saints. Night Prayer of Sunday. </li>
+        </ul>
+    </details>
+ <br>
+  <!-- READINGS -->
+    <details>
+      <summary class= "readingsheading">Readings</summary>
+        <ul class = "readingsdetails">
+          <li>The following readings or any suitable readings from the Common of Pastors or of Holy Men may be selected.</li><br>
+		  <li><span class = "readingstitle">R1:</span> (any reading from the Common)</li>
+          <li><span class = "readingstitle">RP:</span> Psalm 116:1-2</li>
+          <li><span class = "readingstitle">R2:</span> 1 Corinthians 9:16-19, 22-23 </li>
+    	  <li><span class = "readingstitle">Go:</span> Mark 16: 15-20</li>
+        </ul>
+    </details>
+  <br>
+  <!-- PERMITTED MASSES -->
+    <details>
+      <summary class= "rrvvheading">Permitted Masses</summary>
+        <ul class = "rrvvdetails">
+          <li><span class = "rrvvtitle">Saints of the day </span>: No </li>
+		  <li><span class = "rrvvtitle">Ritual </span><span class = "rrvvexpl">(e.g. Confirmation, Marriage)</span>: Any </li>
+          <li><span class = "rrvvtitle">Dead</span>: Funeral</li>
+          <li><span class = "rrvvtitle">Votive </span><span class = "rrvvexpl">(other saints)</span>: with Bishop's permission</li>
+          <li><span class = "rrvvtitle">Various Needs </span><span class = "rrvvexpl">(e.g. Anniversaries)</span>: with Bishop's permission</li>
+        </ul>
+    </details>
+    <br>
+     <!-- NOTES -->
+      <details>
+      <summary class= "notesheading">Notes on the Solemnity</summary>
+        <ul class = "notesdetails">
+          <li><span class = "notestitle">External Solemnity </span>
+          :one or more Masses of St. Francis Xavier may also be celebrated on the following Friday/Saturday with the permission of the Bishop </li><br>
+          <li><span class = "notestitle">Indulgence</span>: A plenary indulgence under the usual conditions is granted to those who visit the parish church of St. Francis Xavier, and there pray an <i>Our Father</i> and the Creed (<i>Manual of Indulgences</i> 33.5a).</li><br>
+        </ul>
+    </details>
+        
+    </details>
+<hr>
 
 
 
 
-<br><br><br><br>
-<span class = "additionalentrytext">At Obligatory Masses:</span>
-<details>
-  <summary class="feasttitlebox">First Sunday of Advent<span class="purpledot"></span></summary>
-  <ul class="feastdetails">
-    <li class="feastdetailslist"><b>MASS:</b><br><br> of the First Sunday of Advent from the Proper of Seasons; no Gloria; Creed; Preface of Advent I; optional Solemn Blessing of Advent </li><br>
-  <li class="feastdetailslist"><b>READINGS:</b><br><br> (insert readings of Sunday) </li>
-  
-  </ul>
-  </details>
+
+
+
+
+
 
 
 
